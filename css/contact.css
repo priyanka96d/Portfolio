@@ -1,0 +1,70 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html, body 
+  {
+    margin:0px;
+    
+    
+  }
+ 
+  .contact-main{
+      
+      background-image: url(/HTML-Project/image/contact/bg-1.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      
+    }
+    header{
+        height: 100px;
+    }
+    .form-border{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:100%;
+        opacity: 0.9;
+    
+      }
+    h3{
+        font-weight: bolder;
+        color: white;
+        margin-left: 10px;
+        text-shadow: 3px 3px 0 rgb(161, 230, 25);
+        font-size: 45px;
+    }
+    .form-group input, textarea ,select
+    {
+        width: 100%;
+        border-color: black;
+        box-shadow:0 0 0 4px #b9d3fa;
+        background-color: white ;
+        opacity: 0.7;
+        font-size: large;
+    }
+    .form-group input,select
+    {
+        border-color: #0d2750;
+        box-shadow:0 0 0 4px #b9d3fa;
+    }
+   
+   
+    .form-group label{
+        
+        color:white;
+    }
+    button{
+        background: rgb(161, 230, 25) ;
+        border-color: #ced4da;
+        border-radius: 50px;
+        text-transform: none;
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    select:focus {
+       font-size: larger;
+    }
+   
+  

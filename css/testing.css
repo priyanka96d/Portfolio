@@ -1,0 +1,712 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+::selection {
+  background-color: cornflowerblue;
+}
+.container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "header" "main" "footer";
+}
+/* Header Start */
+header {
+  grid-area: header;
+  background-color: black;
+}
+.name {
+  height: 100px;
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.name img {
+  height: 100px;
+}
+.mail {
+  text-decoration: none;
+  color: beige;
+  padding: 50px;
+  font-size: 30px;
+  margin-right: 50px;
+}
+.mail:hover {
+  transform: scale(1.5);
+}
+
+/* Navigational Start */
+nav {
+  height: auto;
+  background-color: tan;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: column wrap;
+  gap: 20px;
+}
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 30px;
+  color: black;
+}
+nav a:hover,
+a:focus {
+  font-size: 150%;
+  color: darkgoldenrod;
+}
+/*
+  .text p ::first-letter{
+    font-size: 1400%;
+    font-weight: bold;
+  }
+  */
+
+/* Home Page Main Start */
+.section-main {
+  grid-area: main;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 300px auto;
+  grid-template-areas:
+    "video1"
+    "intro";
+}
+.section-video {
+  grid-area: video1;
+  position: relative;
+}
+video {
+  position: relative;
+  width: 100%;
+  justify-items: stretch;
+  height: 300px;
+  object-fit: cover; /* Causes video to cover/stretch to the header */
+}
+.text {
+  display: inline-block;
+  margin: 0 auto;
+}
+.text p {
+  z-index: 1;
+  color: goldenrod;
+  font-size: xx-large;
+  font-style: italic;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+
+.intro {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: column wrap;
+  align-self: center;
+  margin-left: 100px;
+  padding: 40px;
+}
+
+.welcome-img {
+  object-fit: cover;
+  width: 500px;
+  height: 200px;
+  /*box-shadow: 0 0 30px gray;*/
+}
+.intro-img {
+  object-fit: cover;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 250px;
+  height: 250px;
+  border-radius: 150px;
+  box-shadow: 0 0 40px gray;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+/*Adding animations*/
+@keyframes pulse {
+  0% {
+    transform: scale(1.3);
+  }
+}
+.welcome-msg {
+  font-size: 30px;
+  color: rgb(65, 45, 45);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.welcome {
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Footer Start */
+footer {
+  grid-area: footer;
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
+.section-footer,
+.first-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: column wrap;
+}
+
+.first-section {
+  gap: 50px;
+  margin-top: 20px;
+  padding: 40px;
+}
+.section-footer img {
+  width: 50px;
+  height: 50px;
+  animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(350deg);
+  }
+}
+.section-footer img:hover {
+  animation: none;
+}
+
+/*for laptop : Home page*/
+@media screen and (min-width: 1024px) {
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 200px auto auto;
+    grid-template-areas: "header" "main" "footer";
+  }
+  header {
+    grid-area: header;
+    background-color: black;
+  }
+  nav {
+    height: 60px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1.5);
+    }
+  }
+
+  .section-main {
+    grid-area: main;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 300px auto;
+    grid-template-areas:
+      "video1"
+      "intro";
+    justify-content: center;
+  }
+  .section-video {
+    grid-area: video1;
+    width: 100%;
+  }
+
+  .text p:first-of-type {
+    margin-left: 400px;
+  }
+  .intro {
+    grid-area: intro;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 200px 300px;
+    grid-template-areas:
+      "introImg img1"
+      "introImg text1";
+  }
+  .welcome-img {
+    grid-area: img1;
+  }
+  .welcome-msg {
+    grid-area: text1;
+  }
+
+  .section-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .first-section,
+  .second-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+}
+/*not working*/
+@media print and (not(color)) {
+  body {
+    background-color: palevioletred;
+  }
+}
+
+/*about.html css*/
+
+.about-main {
+  grid-area: main;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "work" "fun" "education" "skills";
+}
+.introduction {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+  background-image: linear-gradient(
+    to top,
+    #fdcbf1 0%,
+    #fdcbf1 1%,
+    #e6dee9 100%
+  );
+}
+.introduction div {
+  margin: auto;
+  width: 60vw;
+  height: auto;
+  padding: 10px;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  font-size: 25px;
+}
+
+.introduction div:nth-of-type(odd):hover {
+  transform: scale(1.9);
+  transform: translate(-50px, -10px);
+  color: brown;
+}
+.introduction div:nth-of-type(even):hover {
+  transform: translate(50px, 10px);
+  color: rebeccapurple;
+}
+
+.span-element {
+  font-family: cursive;
+  font-size: 50px;
+  margin-right: 0.5em;
+
+  float: left;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+}
+.intro1 article::first-letter {
+  font-size: 140%;
+  font-weight: bold;
+}
+.clg {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+.clg .clg-name {
+  display: flex;
+  border: 3px solid;
+  gap: 40px;
+  justify-content: stretch;
+}
+.clg img {
+  float: left;
+  width: 200px;
+  object-fit: cover;
+  height: 200px;
+  padding: 20px;
+}
+.clg article {
+  float: right;
+  width: 600px;
+  padding: 20px;
+  line-height: 2px;
+}
+.clg article p:first-of-type {
+  font-size: 30px;
+  font-weight: bold;
+}
+.intro1 .a:hover {
+  color: palevioletred;
+}
+.intro1 .a {
+  text-decoration: none;
+}
+
+/*Media Query for mobile*/
+@media screen and (max-width: 600px) {
+  .introduction div {
+    width: 80vw;
+    font-size: 35px;
+  }
+
+  .introduction,
+  .intro1,
+  .clg,
+  .clg-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .clg .clg-name {
+    border: none;
+    gap: 10px;
+  }
+  .clg-name article {
+    font-size: 10px;
+    text-align: center;
+  }
+  .clg article p:first-of-type {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .introduction div:hover {
+    transform: scale(1.2);
+    color: rebeccapurple;
+  }
+}
+
+/*Career Css Start*/
+
+/*for desktop*/
+
+.career-main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "skills experience"
+    "skills project"
+    "skills course"
+    "skills certificate";
+
+  margin: auto;
+  width: 80%;
+  height: auto;
+  padding: 10px;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  font-size: 20px;
+}
+.skills {
+  grid-area: skills;
+  background-color: rgb(205, 231, 151);
+}
+.project {
+  grid-area: project;
+  background-color: rgb(200, 164, 233);
+}
+.course-work {
+  grid-area: course;
+  background-color: cadetblue;
+}
+.certificate {
+  grid-area: certificate;
+  background-color: palevioletred;
+}
+.experience {
+  grid-area: experience;
+  background-color: paleturquoise;
+}
+.career-main p:first-of-type {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+.career-main div {
+  margin: 10px;
+}
+.rod {
+  width: 20px;
+  height: 600px;
+  border-radius: 10px;
+  background-color: cornsilk;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+}
+.rod > div {
+  font-size: 10px;
+  width: 100%;
+  height: 100px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.rod p {
+  font-size: 15px;
+  position: relative;
+  left: 20px;
+  width: 80px;
+}
+.rod span {
+  position: relative;
+  font-size: 12px;
+  right: 30px;
+  font-weight: bold;
+}
+.soft-skills img {
+  width: 50px;
+  height: 50px;
+}
+.ss {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.ss :hover {
+  font-size: large;
+  color: peru;
+}
+
+/*for Mobile*/
+@media screen and (max-width: 600px) {
+  .career-main {
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "skills skills"
+      "experience experience"
+      "project project"
+      "course course"
+      "certificate certificate";
+
+    margin: auto;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    font-size: 20px;
+  }
+
+  .rod {
+    height: 30px;
+    width: 100%;
+    margin-left: 0;
+    border-radius: 10px;
+    background-color: cornsilk;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .rod > div {
+    font-size: 10px;
+    width: 100%;
+    height: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .rod p {
+    font-size: 10px;
+    position: relative;
+    bottom: 15px;
+    width: 55px;
+    margin: 0;
+  }
+  .rod span {
+    position: relative;
+    font-size: 10px;
+    top: 5px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  .ss l {
+    font-size: 15px;
+  }
+}
+
+/*Gallery CSS*/
+
+.gallery-main {
+  grid-area: main;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+.photography {
+  display: grid;
+  grid-template-columns: 400px auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "aside gallery-text"
+    "aside photo";
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  margin: auto;
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  justify-content: stretch;
+  overflow: hidden;
+}
+.aside {
+  grid-area: aside;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: black;
+}
+.text {
+  color: #c1dfc4;
+  margin: 5px;
+}
+.aside .image {
+  width: 350px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.aside img {
+  position: absolute;
+  animation: aside-minislide 20s infinite;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes aside-minislide {
+  25% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+.aside img:nth-child(4) {
+  animation-delay: 0s;
+}
+.aside img:nth-child(3) {
+  animation-delay: 5s;
+}
+.aside img:nth-child(2) {
+  animation-delay: 10s;
+}
+.aside img:nth-child(1) {
+  animation-delay: 15s;
+}
+
+.gallery-text {
+  grid-area: gallery-text;
+  background-color: palevioletred;
+  width: auto;
+}
+.gallery-text article {
+  font-size: larger;
+  padding: 10px;
+  text-align: center;
+}
+.photo {
+  grid-area: photo;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  flex-wrap: wrap;
+  background-color: black;
+  width: auto;
+  gap: 20px;
+}
+.photo img {
+  width: 100%;
+  object-fit: cover;
+}
+.photo img:hover {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 3;
+}
+
+/*Art div*/
+.art {
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  margin: auto;
+  width: 80%;
+}
+
+.art-pic {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.tag {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(39, 23, 23);
+  margin-left: 130px;
+  z-index: 1;
+}
+.art-pic > div {
+  position: relative;
+}
+.art-pic img {
+  animation: hang 4s infinite ease-in-out;
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  float: left;
+}
+@keyframes hang {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.tag figure {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: seashell;
+  margin-left: 45%;
+  border: solid 4px rgb(192, 231, 115);
+}
+
+.item article {
+  margin: 10px;
+  font-size: 20px;
+}
+
+/* for mobile */
+@media screen and (max-width: 600px) {
+  .photography {
+    display: flex;
+    flex-direction: column;
+  }
+}
