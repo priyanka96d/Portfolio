@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="./CSS-Project/contact.css">
+    <link rel="stylesheet" href="./CSS-Project/testing.css">
+    <title>Get in Touch</title>
+</head>
+<body class=container>
+    <!--header section-->
+    <header>
+        <div class="name">
+          <a href="index_project.html">
+            <img  src="./image/2.png">
+          </a>
+            
+          <a class="mail" href = "mailto:deshmukhpriya2858@students.itu.edu">Email Me!!</a>
+        </div>
+
+        <!--main section-->
+
+        <div class="contact-main">
+
+            <!--Form section-->
+        <div class="form-border">
+        <form>
+            <h3>Get in Touch</h3>
+
+            <!--Name-->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text"  autofocus required>
+            </div>
+            <!--Enail-->
+            <div class="form-group">
+                <label for="email">Email</label required>
+                <input id="email" type="email" >
+            </div>
+            <!--Contact Number-->
+            <div class="form-group">
+                <label for="phone-number">Contact Number</label>
+                <input id="phone-number" type="number" required min="0" max="10" >
+            </div>
+            <!--DOB-->
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input id="dob" type="date" >
+            </div>
+            <!--Country-->
+            <div class="form-group">
+                <label for="Country">Choose a Country</label>
+
+                <select  class = "select-class" name="country" id="age">
+                    <option value="null">Select Country</option>
+                    <option value="aus">Australia</option>
+                    <option value="usa">India</option>
+                    <option value="in">USA</option>
+                </select>
+                </select>
+            </div>
+            <!--Comment-->
+            <div class="form-group">
+                <label for="comment">Comment</label>
+                <textarea type="text" id="comment"></textarea>
+                
+            </div>
+           
+         
+            <!--Buttons-->
+            <div class="form-group">
+                <button type="submit">Send</button>
+                <button type="reset">Clear</button>
+            </div>    
+                
+        </form>
+    </div>
+    </div>
+</body>
+</html>
